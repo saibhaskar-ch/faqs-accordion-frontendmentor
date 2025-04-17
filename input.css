@@ -15,7 +15,7 @@
   }
 
   ul > li {
-    @apply border-y-1 border-[hsl(275,100%,97%)] py-5;
+    @apply border-y-1 border-[hsl(275,100%,97%)] py-5 lg:py-8;
   }
 
   ul > li:first-of-type {
@@ -36,8 +36,12 @@
     @apply flex items-center;
   }
 
-  .accordion > label > h3 {
-    @apply w-[80%] lg:w-[90%] text-sm lg:text-base font-semibold leading-5;
+  .accordion > label > p {
+    @apply w-[80%] lg:w-[90%] text-sm lg:text-lg font-semibold leading-5;
+  }
+
+  .accordion > label:hover > p {
+    @apply text-[hsl(292,16%,49%)];
   }
 
   .accordion > label > figure {
@@ -48,12 +52,12 @@
     @apply max-h-0 overflow-hidden transition-all duration-350 ease-in-out;
   }
 
-  .accordion > div  p {
+  .accordion > div p {
     @apply text-sm lg:text-base text-[hsl(292,16%,49%)];
   }
 
   .accordion > input[type="checkbox"]:checked ~ div {
-    @apply pt-5 max-h-[500px];
+    @apply pt-5 lg:pt-8 max-h-[500px];
   }
 
   .accordion > label > figure img:last-of-type {
