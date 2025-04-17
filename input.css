@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-work-sans: "Work Sans", sans-serif;
+}
+
+@layer base {
+  body > div {
+    @apply min-h-[100vh] font-work-sans;
+  }
+
+  body > div > div {
+    @apply min-h-[96.2vh];
+  }
+
+  ul > li {
+    @apply border-y-1 border-[hsl(275,100%,97%)] py-5;
+  }
+
+  ul > li:first-of-type {
+    @apply border-t-0 pt-0;
+  }
+
+  ul > li:last-of-type {
+    @apply border-b-0 pb-0;
+  }
+}
+
+@layer components {
+  .accordion > input[type="checkbox"] {
+    @apply hidden;
+  }
+
+  .accordion > label {
+    @apply flex items-center;
+  }
+
+  .accordion > label > h3 {
+    @apply w-[80%] lg:w-[90%] text-sm lg:text-base font-semibold leading-5;
+  }
+
+  .accordion > label > figure {
+    @apply w-[20%] lg:w-[10%] flex justify-end items-center;
+  }
+
+  .accordion > div {
+    @apply max-h-0 overflow-hidden transition-all duration-350 ease-in-out;
+  }
+
+  .accordion > div  p {
+    @apply text-sm lg:text-base text-[hsl(292,16%,49%)];
+  }
+
+  .accordion > input[type="checkbox"]:checked ~ div {
+    @apply pt-5 max-h-[500px];
+  }
+
+  .accordion > label > figure img:last-of-type {
+    @apply hidden;
+  }
+
+  .accordion
+    > input[type="checkbox"]:checked
+    + label
+    > figure
+    img:last-of-type {
+    @apply block;
+  }
+
+  .accordion
+    > input[type="checkbox"]:checked
+    + label
+    > figure
+    img:first-of-type {
+    @apply hidden;
+  }
+}
